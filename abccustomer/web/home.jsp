@@ -38,8 +38,8 @@
                <li></li>
                <li></li>
                <li></li>
-               <li></li>
-               <li></li>
+               
+               
                
                
                <a href="About.jsp"><img src="ticket.png"   style="width:50px;  border-radius:50%;"></a>

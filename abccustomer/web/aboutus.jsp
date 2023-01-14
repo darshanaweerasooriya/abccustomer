@@ -25,14 +25,12 @@
        <div class="nav-links" id="navLinks">
            <i class="fa fa-times" onclick="hideMenu()"></i>
            <ul>
-               <li><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
                <li><a href="">Movies</a></li>
                <li><a href="">News</a></li>
                <li><a href="">Contact</a></li>
                <li><a href="">About us</a></li>
                <li><a href="">Feedback</a></li>
-               <li></li>
-               <li></li>
                <li></li>
                <li></li>
                <li></li>
