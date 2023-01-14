@@ -237,7 +237,7 @@ p{
         <br>
          <hr size="59" width="100%" color="white">
          <br>
-         <div class="st">show time : <label class="time">00:00</label></div>
+     Show time : <span class="time" id="st1">00.00</span><i></i> <span class="time" id="st2">00.00</span> <i></i><span class="time" id="st3">00.00</span>
          <br>
          <hr>
         <hr class="h">
