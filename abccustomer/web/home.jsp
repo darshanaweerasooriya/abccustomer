@@ -80,10 +80,15 @@
                           <img src="avatar3.jpg" class="card-img-top mh-25" alt="...">
                           <div class="card-body bg-dark">
                               <center> <h1 style="color: white; font-size: 20px;"> <%=title%></h1></center><br>
-                             <center><button type="button" class="btn btn-success">BUY TICKETS</button>
+                              <a href="selectmovie.jsp">  <center><button type="button" class="btn btn-success">BUY TICKETS</button></center></a>
+                           
                           </div>
                         </div>
                       </div>
+                     
+                      
+                               
+          </div>
                       
                       
                       

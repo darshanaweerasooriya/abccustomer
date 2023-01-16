@@ -75,7 +75,7 @@
                      
             <div class="container">
                       
-                <form id="card-form" method="post" action="thankyou.html">
+                <form id="card-form" method="post" action="thankyou.jsp">
                     <br>
                     <h1><center>Payment Details</center></h1>
                     <br> 
@@ -278,42 +278,55 @@
                     
                    <center><p style="color:white">&copy;2022 Property & Finance and Investments Colombo(PVT)Ltd.All rights reserved. </p></center>
 
-                   <div class="container1">
+                  <div class="container1">
                        
-                    <%Cookie [] pay=request.getCookies();%>
-                   
-                   <center><p style="color: black"><%out.print(""+pay[1].getValue());%></p></center>
-                   <center><p style="color: black"><%out.print(""+pay[2].getValue());%></p></center>
-                   <center><p style="color: black"><%out.print(""+pay[3].getValue());%></p></center>
-                   
-                   
+                    
                    <h3><center><br>Movie Detail Summary</center></h3> 
                    <div class="align">
                     <br>
-
+                     <jsp:declaration>
+                          String movie= "";
+                          String date= "";
+                          String time="";
+                          String seat="";
+            
+                       </jsp:declaration>
+        
+                     <jsp:scriptlet>
+                          movie=request.getParameter("movie");
+                          date=request.getParameter("date");
+                          time=request.getParameter("time");
+                          seat=request.getParameter("scategory");
+            
+                      </jsp:scriptlet>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Movie Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp; 
-                    <input type="text" class="rounded" id="card-number" name="mname">
+                    <jsp:expression> movie </jsp:expression>
                     <br><br>
+                    
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Movie Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;
-                    <input type="text"  id="card-number" class="rounded" name="mdate">
+                    <jsp:expression> date</jsp:expression>
                     <br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Show Time &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;
-                    <input type="text" class="rounded" id="card-number" name="time">
+                    <jsp:expression>time </jsp:expression>
                     <br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seat category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;
-                    <input type="text" class="rounded" id="card-number" name="scategory">
+                      <jsp:expression>seat</jsp:expression>
                     <br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No. of seat selected &nbsp;:&nbsp;
-                    <input type="text" class="rounded" id="card-number" name="tseat">
+                    2
                     <br><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total Tickrt price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;
-                    <input type="text" class="rounded" id="card-number" name="price">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total Ticket price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;
+                    LKR.1000
 
 
                    </div>
                    
                
                    </div>
+                    
+                    
+                        
+                    </form>
 
                 </form><br><br>
              </div>       
