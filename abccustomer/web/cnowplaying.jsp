@@ -4,7 +4,8 @@
     Author     : Darshana
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,21 +26,21 @@
        <div class="nav-links" id="navLinks">
            <i class="fa fa-times" onclick="hideMenu()"></i>
            <ul>
-               <li><a href="">Home</a></li>
-               <li><a href="">Movies</a></li>
-               <li><a href="">News</a></li>
-               <li><a href="">Contact</a></li>
-               <li><a href="">About us</a></li>
+               <li><a href="home.jsp">Home</a></li>
+               <li><a href="cnowplaying.jsp">Now Playing</a></li>
+               <li><a href="cmingzn.jsp">Coming soon</a></li>
+               <li><a href="Contactus.jsp">Contact</a></li>
+               <li><a href="aboutus.jsp">About us</a></li>
+               <li><a href="feedback.jsp">Feedback</a></li>
+           
+               
                <li></li>
                <li></li>
                <li></li>
                <li></li>
                <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
+               
+               
                
                
                <a href="About.jsp"><img src="ticket.png"   style="width:50px;  border-radius:50%;"></a>
@@ -48,57 +49,58 @@
        </div>
        <i class="fa fa-bars" onclick="showMenu()"></i>
    </nav>
+    <div>
+   
     <section class="background firstSection" id="home">
         <div class="mlist"></div></section><br>
+        
             <section>
-                <h1 style="color:black">NOW SHOWING</h1><hr size="10" width="100%" color="black" ><br>
-                <div class="row row-cols-1 row-cols-md-5 g-6">
+                 <h1 style="color:black">NOW SHOWING</h1><hr size="10" width="100%" color="black" ><br>
+                
+                 <%
+            Connection con = null;
+            PreparedStatement st = null;
+            ResultSet rs = null;
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/abccinema","root","");
+                String sql = "SELECT * FROM nowplaying";
+                st = con.prepareStatement(sql);
+                rs = st.executeQuery();
+                while(rs.next()){
+                   
+                   
+                    String title = rs.getString("mtitle");
+                    String director = rs.getString("director");
+                    String mimage = rs.getString("mimg");
+
+        %>
+               
+                <div class="row row-cols-1 row-cols-md-5 g-6"> 
                     <div class="col ps-3 pr-5">
                         <div class="card">
                           <img src="avatar3.jpg" class="card-img-top mh-25" alt="...">
                           <div class="card-body bg-dark">
+                              <center> <h1 style="color: white; font-size: 20px;"> <%=title%></h1></center><br>
                              <center><button type="button" class="btn btn-success">BUY TICKETS</button>
+                                 
                           </div>
+                             
                         </div>
+                     
                       </div>
-                      <div class="col ps-3 pr-5">
-                        <div class="card">
-                          <img src="avatar3.jpg" class="card-img-top mh-25" alt="...">
-                          <div class="card-body bg-dark">
-                             <center><button type="button" class="btn btn-success">BUY TICKETS</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col ps-3 pr-5">
-                        <div class="card">
-                          <img src="avatar3.jpg" class="card-img-top mh-25" alt="...">
-                          <div class="card-body bg-dark">
-                              <center><button type="button" class="btn btn-success">BUY TICKETS</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col ps-3 pr-5">
-                        <div class="card">
-                          <img src="avatar3.jpg" class="card-img-top mh-25" alt="...">
-                          <div class="card-body bg-dark">
-                              <center><button type="button" class="btn btn-success">BUY TICKETS</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col ps-3 pr-5">
-                        <div class="card">
-                          <img src="avatar3.jpg" class="card-img-top mh-25" alt="...">
-                          <div class="card-body bg-dark">
-                              <center><button type="button" class="btn btn-success">BUY TICKETS</button>
-                          </div>
-                        </div>
-                      </div>
+                     
                 </div>
                 
+                
+                                 <%
+                }
+            } catch (Exception e) {
+                out.println(e);
+            } %>
+                
             </section>
-        
-
-            
+     
     <!--Fotter-->
 
     <section> 
@@ -156,6 +158,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+ 
 
 </body>
 

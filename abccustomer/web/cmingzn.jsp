@@ -4,7 +4,8 @@
     Author     : Darshana
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,22 +25,22 @@
         <p class="log"><b><a href="#"> <img src="abc2.png" alt="" width="90px" height="90px"></a></b></p>
        <div class="nav-links" id="navLinks">
            <i class="fa fa-times" onclick="hideMenu()"></i>
-           <ul>
-               <li><a href="">Home</a></li>
-               <li><a href="">Movies</a></li>
-               <li><a href="">News</a></li>
-               <li><a href="">Contact</a></li>
-               <li><a href="">About us</a></li>
+          <ul>
+               <li><a href="home.jsp">Home</a></li>
+               <li><a href="cnowplaying.jsp">Now Playing</a></li>
+               <li><a href="cmingzn.jsp">Coming soon</a></li>
+               <li><a href="Contactus.jsp">Contact</a></li>
+               <li><a href="aboutus.jsp">About us</a></li>
+               <li><a href="feedback.jsp">Feedback</a></li>
+           
+               
                <li></li>
                <li></li>
                <li></li>
                <li></li>
                <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
+               
+               
                
                
                <a href="About.jsp"><img src="ticket.png"   style="width:50px;  border-radius:50%;"></a>
@@ -48,72 +49,48 @@
        </div>
        <i class="fa fa-bars" onclick="showMenu()"></i>
    </nav>
+    <%
+            Connection con = null;
+            PreparedStatement st = null;
+            ResultSet rs = null;
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/abccinema","root","");
+                String sql1 = "SELECT * FROM commingsoon";
+                st = con.prepareStatement(sql1);
+                rs = st.executeQuery();
+                while(rs.next()){
+                   
+                    
+                    String cmtitle = rs.getString("title");
+                    String cmdirector = rs.getString("director");
+                    String cmwriter = rs.getString("writter");
+                    String cmdescription = rs.getString("description");
+                    String cmmimage = rs.getString("image");
+
+        %>
     <section class="background firstSection" id="home">
         <div class="mlist"></div></section><br>
            
         <section><br><br>
             <h1 style="color:black">COMING ZOON</h1><hr size="10" width="100%" color="black" ><br>
         <div class="row row-cols-1 row-cols-md-5 g-6">
-            <div class="col ps-3 pr-5">
+           <div class="col ps-3 pr-5">
               <div class="card">
                   <div class="inner">
-                      <img src="avatar3.jpg" class="card-img-top mh-25" alt="..." style="height: 340px">
+                      <img src="babylon3.jpg" class="card-img-top mh-25" alt="..." style="height: 340px">
                   </div>
                 <div class="card-body bg-primary">
-                    <h5 class="card-title">AVATAR: THE WAY OF WATER</h5>
-                    <p class="card-text">IN CINEMAS 16TH DECEMBER</p>
+                    <h5 class="card-title"><%=cmtitle%></h5>
+                    <p class="card-text"><%=cmdescription%></p>
                      <a href="https://www.youtube.com/watch?v=d9MyW72ELq0&t=55s" class="btn btn-primary">WATCH TRAILER</a>
                 </div>
               </div>
             </div>
-            <div class="col ps-1 ">
-                <div class="card">
-                    <div class="inner">
-                        <img src="babylon3.jpg" class="card-img-top mw-6" alt="..." style="height: 340px">
-                    </div>
-                  <div class="card-body bg-primary">
-                         <h5 class="card-title">BABYLON</h5>
-                         <p class="card-text">IN CINEMAS 7TH JANUARY</p><br><br>
-                         <a href="https://www.youtube.com/watch?v=5muQK7CuFtY" class="btn btn-primary">WATCH TRAILER</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col ps-1 ">
-                <div class="card">
-                    <div class="inner">
-                        <img src="babylon3.jpg" class="card-img-top mw-6" alt="..." style="height: 340px">
-                    </div>
-                  <div class="card-body bg-primary">
-                         <h5 class="card-title">BABYLON</h5>
-                         <p class="card-text">IN CINEMAS 7TH JANUARY</p><br><br>
-                         <a href="https://www.youtube.com/watch?v=5muQK7CuFtY" class="btn btn-primary">WATCH TRAILER</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col ps-1 ">
-                <div class="card">
-                    <div class="inner">
-                        <img src="babylon3.jpg" class="card-img-top mw-6" alt="..." style="height: 340px">
-                    </div>
-                  <div class="card-body bg-primary">
-                         <h5 class="card-title">BABYLON</h5>
-                         <p class="card-text">IN CINEMAS 7TH JANUARY</p><br><br>
-                         <a href="https://www.youtube.com/watch?v=5muQK7CuFtY" class="btn btn-primary">WATCH TRAILER</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col ps-1 ">
-                <div class="card">
-                    <div class="inner">
-                        <img src="babylon3.jpg" class="card-img-top mw-6" alt="..." style="height: 340px">
-                    </div>
-                  <div class="card-body bg-primary">
-                         <h5 class="card-title">BABYLON</h5>
-                         <p class="card-text">IN CINEMAS 7TH JANUARY</p><br><br>
-                         <a href="https://www.youtube.com/watch?v=5muQK7CuFtY" class="btn btn-primary">WATCH TRAILER</a>
-                  </div>
-                </div>
-              </div>
+           
+             
+              
+              
             </div>
     </div>
     </section>
@@ -176,7 +153,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-
+ <%
+                }
+            } catch (Exception e) {
+                out.println(e);
+            } %>
 </body>
 
 </html>

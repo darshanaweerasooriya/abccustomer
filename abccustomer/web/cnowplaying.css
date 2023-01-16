@@ -660,6 +660,7 @@ nav .fa{
     display: flex;
     margin-left: 0px;
     margin-right: 1%;
+    
 }
 .row-one{
    flex-basis: 25%;
@@ -731,4 +732,9 @@ nav .fa{
        font-size: 22px;
        cursor: pointer;
     }
+}
+.card
+{
+    position: relative;
+    display: inline;
 }

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : Jan 13, 2023, 11:03:14 AM
+    Document   : selectmovie
+    Created on : Jan 16, 2023, 4:10:55 AM
     Author     : Darshana
 --%>
 
@@ -11,16 +11,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="home.css" type="text/css">
-        <link rel="stylesheet" href="avatar.jpeg" >
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-</head>
-
-<body>
- <%
+        <link rel="stylesheet"href="selectmovie.css">
+        
+        <style>
+            .navbar-links {
+               height: 100%;
+              }
+        </style>
+    </head>
+    <body>
+        <%
             Connection con = null;
             PreparedStatement st = null;
             ResultSet rs = null;
@@ -40,7 +41,7 @@
                     String mimage = rs.getString("mimg");
 
         %>
-    <nav>
+         <nav>
         <p class="log"><b><a href="#"> <img src="abc2.png" alt="" width="90px" height="90px"></a></b></p>
        <div class="nav-links" id="navLinks">
            <i class="fa fa-times" onclick="hideMenu()"></i>
@@ -53,13 +54,10 @@
                <li><a href="feedback.jsp">Feedback</a></li>
            
                
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
+              
+        
                
-               
+               &nbsp;&nbsp;&nbsp;
                
                
                <a href="About.jsp"><img src="ticket.png"   style="width:50px;  border-radius:50%;"></a>
@@ -68,80 +66,72 @@
        </div>
        <i class="fa fa-bars" onclick="showMenu()"></i>
    </nav>
-    <section class="background firstSection" id="home">
-        <div class="mlist"></div></section><br>
-        <form action="" method="get">
-            <section>
-                <h1 style="color:black">NOW Playing</h1><hr size="10" width="100%" color="black" ><br>
-                <div class="row row-cols-1 row-cols-md-5 g-6">
-                    
-                      <div class="col ps-3 pr-5">
-                        <div class="card">
-                          <img src="avatar3.jpg" class="card-img-top mh-25" alt="...">
-                          <div class="card-body bg-dark">
-                              <center> <h1 style="color: white; font-size: 20px;"> <%=title%></h1></center><br>
-                             <center><button type="button" class="btn btn-success">BUY TICKETS</button>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      
-                      
-                </div>
-                
-            </section>
-                             
-        </form>
-                             <%
-       
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/abccinema","root","");
-                String sql1 = "SELECT * FROM commingsoon";
-                st = con.prepareStatement(sql1);
-                rs = st.executeQuery();
-                while(rs.next()){
-                   
-                    String cmmid= rs.getString("mid");
-                    String cmtitle = rs.getString("title");
-                    String cmdirector = rs.getString("director");
-                    String cmwriter = rs.getString("writter");
-                    String cmdescription = rs.getString("description");
-                    String cmmimage = rs.getString("image");
-
-        %>
-        <section><br><br>
-            <h1 style="color:black">COMING ZOON</h1><hr size="10" width="100%" color="black" ><br>
-        <div class="row row-cols-1 row-cols-md-5 g-6">
-            <div class="col ps-3 pr-5">
-              <div class="card">
-                  <div class="inner">
-                      <img src="babylon3.jpg" class="card-img-top mh-25" alt="..." style="height: 340px">
-                  </div>
-                <div class="card-body bg-primary">
-                    <h5 class="card-title"><%=cmtitle%></h5>
-                    <p class="card-text"><%=cmdescription%></p>
-                     <a href="https://www.youtube.com/watch?v=d9MyW72ELq0&t=55s" class="btn btn-primary">WATCH TRAILER</a>
-                </div>
-              </div>
-            </div>
          
+        
+        
+        <hr class="hrtop" size="59" width="100%" color="white">
+         
+          
+        
+         <hr>
+         <section>
              
+          <form action="displayvalues" method="get">
+            <center><table>
+                  <tr>
+                    <td>
+                        <select name="movie" id="movie" class="form-select form-select-lg mb-3">
+                            <option>Select a Movie</option>
+                            <option value="Avatar: The Way of Water"> <%=title%></option>
+                           
+                        </select>
+                    </td> 
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                         <select name="date" id="date" class="form-select form-select-lg mb-3">
+                             <option>Select Date</option>
+                            <option value="sun,11th December">Mon,23th January</option>
+                            <option value="Mon,12th December">Tue,24th January</option>
+                            <option value="Tue,13th December">Wed,25th January</option>
+                            <option value="Wed,11th December">Tue,26th January</option>
+                            <option value="Thu,11th December">Fri,27th January</option>
+                        </select>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <select name="time" id="time" class="form-select form-select-lg mb-3">
+                            <option>Select  Time</option>
+                            <option value="10.30">10.30am</option>
+                            <option value="1.30">2.30pm</option>
+                             <option value="1.30">4.15pm</option>
+                              <option value="1.30">9.00pm</option>
+                           
+                        </select>
+                    </td>
+                </tr>
+                </table></center>
+              <br><br>
+              <center><table class="table1">
+                  <tr class="tr1">
+                <td class="tb1"><button type="reset" class="btn btn-danger">Cancel</button></td>
+                <td class="td1"></td>
+                <td class="tb1"><button type="submit" class="btn btn-success">Next</button></td>
+                 </tr>
+                  </table></center>
+              
+              
              
-            
-            </div>
-    </div>
-     <%
-                }
-            } catch (Exception e) {
-                out.println(e);
-            } %>
-    </section>
+              
+          </form>
+         </section>
+       
+       
 
-            
-    <!--Fotter-->
-
-    <section> 
+ <hr size="3" width="100%" color="white">
+ 
+                 
+                  
+           <section> 
         <div class="footer">
         <div class="row">
          <div class="row-one">
@@ -185,23 +175,30 @@
         <hr size="3" width="100%" color="white">
         <div>
 
-         <center>  <p > Copyright ABC Cinema(Pvt)Ltd.|All Rights Reserved</p></center>
+         <center>  <p class="copy"> Copyright ABC Cinema(Pvt)Ltd.|All Rights Reserved</p></center>
         </div>
         <hr size="3" width="100%" color="white">
         </div>
     </section>          
-    
-   
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-
-     <%
+           
+        
+        <script>
+            var navLinks = document.getElementById("navLinks");
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <%
                 }
             } catch (Exception e) {
                 out.println(e);
             } %>
-</body>
-
+    </body>
 </html>
