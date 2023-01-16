@@ -4,7 +4,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Jan 14, 2023, 2:44:05 PM
+    Created on : Jan 16, 2023, 4:11:25 AM
     Author     : Darshana
 */
 
@@ -145,6 +145,7 @@ p{
             display: flex;
             margin-left: 0px;
             margin-right: 1%;
+            
         }
         .row-one{
            flex-basis: 31%;
@@ -182,3 +183,136 @@ p{
             height:80;
             font-size: 20px;
         }
+        .footer{
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    padding: 100px 0 500px;
+    width: 100%;
+    color:white;
+    padding-top: 5px;
+}
+
+.ftr{
+    border:none;
+    border-radius: 10px;
+    border-color: white;
+    width: 1500px;
+    height: 250px;  
+    padding: 0;
+    margin: 700px 0 0 -100px;
+}
+/*---1st---*/
+.ftr-sec-frst{
+    border:none;
+    border-radius: 10px;
+    border-color: white;
+    width: 180px;
+    height: 150px;  
+    margin: 35px 0px 0px 100px;
+      
+}
+.ftr-sec-frst p{
+    font-size: 20px;
+}
+.logo-ftr{
+    width :130px;
+    height:100px;
+}
+/*---2nd---*/
+.ftr-sec-scnd{
+    border:none;
+    border-radius: 10px;
+    border-color: white;
+    width: 180px;
+    height: 15px;  
+    margin: -200px 0px 0px 430px;
+     
+}
+.ftr-sec-scnd p{
+    font-size: 20px;
+    margin: 100px 0 0 0;
+}
+.ftr-sec-scnd p a{
+    color:white;
+    text-decoration:none;
+}
+
+/*---3rd---*/
+/*.ftr-sec-thrd{
+    border:none;
+    border-radius: 10px;
+    border-color: white;
+    width: 180px;
+    height: 200px;  
+    margin: -300px 0px 0px 560px;
+       
+}
+.ftr-sec-thrd p{
+    font-size: 20px;
+    margin: 100px 0 0 0;
+}
+.ftr-sec-thrd p a{
+    color:white;
+    text-decoration:none;
+}
+*/
+/*---4th---*/
+
+
+
+
+.row{
+            
+    display: flex;
+    margin-left: 0px;
+    margin-right: 1%;
+}
+.row-one{
+   flex-basis: 25%;
+   background: black;
+   border-radius: 1px;
+   margin-bottom: 5%;
+   padding: 35px 20px;
+   box-sizing: border-box;
+}
+.row-one-Links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.row-one-Links ul li a{
+   color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+ .row-one-Links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: red;
+    display: block;
+    margin: auto; 
+    transition: 0.5s;
+}
+.row-one-Links ul li:hover::after{
+    width: 100%;
+}
+hr
+{
+    margin-top: 200px;
+}
+
+.footer
+{
+    background-color: black;
+    height: 30px;
+}
+.hrtop
+{
+    top: 50px;
+}
+.copy
+{
+    padding: 8px 12px;
+}

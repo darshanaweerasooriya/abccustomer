@@ -14,28 +14,29 @@
          <link rel="stylesheet" href="feedback.css" type="text/css">
        
     </head>
-    <style>
-       
-        </style>
+ 
     <body>
         <section></section>
         <div class="container"> 
-        <form acion="config" method="post">
+        <form action="feedback" method="post">
             
                 
                 <h1>Give your Feedback</h1>
                 <div class="id">
-                    <input type="text" placeholder="Full name">
+                    <input type="text" placeholder="ID number" name="cid">
+                    <i class="far fa-user" ></i>
+                </div><div class="id">
+                    <input type="text" placeholder="Full name" name="cname">
                     <i class="far fa-user" ></i>
                 </div>
                 <div class="id">
-                    <input type="email" placeholder="Email Address">
+                    <input type="email" placeholder="Email Address" name="cemail">
                     <i class="far fa-envelope" ></i>
                 </div>
-                <textarea cols="15" rows="5" placeholder="Enter Your option here"></textarea>
-                <button>send</button>
-              </form>  
+                <textarea cols="15" rows="5" placeholder="Enter Your oponion here" name="cop"></textarea>
+                <button type="submit" class="fd" id="my-id">Submit</button>
+             
             </div>
-        
+         </form>  
     </body>
 </html>

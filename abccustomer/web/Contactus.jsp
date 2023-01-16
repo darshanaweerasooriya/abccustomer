@@ -24,20 +24,22 @@
         <p class="log"><b><a href="#"> <img src="abc2.png" alt="" width="90px" height="90px"></a></b></p>
        <div class="nav-links" id="navLinks">
            <i class="fa fa-times" onclick="hideMenu()"></i>
-           <ul>
-                <li><a href="">Home</a></li>
-               <li><a href="">Movies</a></li>
-               <li><a href="">News</a></li>
-               <li><a href="">Contact</a></li>
-               <li><a href="">About us</a></li>
-               <li><a href="">Feedback</a></li>
+          <ul>
+               <li><a href="home.jsp">Home</a></li>
+               <li><a href="cnowplaying.jsp">Now Playing</a></li>
+               <li><a href="cmingzn.jsp">Coming soon</a></li>
+               <li><a href="Contactus.jsp">Contact</a></li>
+               <li><a href="aboutus.jsp">About us</a></li>
+               <li><a href="feedback.jsp">Feedback</a></li>
+           
+               
                <li></li>
                <li></li>
                <li></li>
                <li></li>
                <li></li>
-               <li></li>
-               <li></li>
+               
+               
                
                
                <a href="About.jsp"><img src="ticket.png"   style="width:50px;  border-radius:50%;"></a>

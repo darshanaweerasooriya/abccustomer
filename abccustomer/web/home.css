@@ -319,7 +319,7 @@ nav .fa{
    background: black;
    border-radius: 1px;
    margin-bottom: 5%;
-   padding: 35px 20px;
+   padding: 35px 10px;
    box-sizing: border-box;
 }
 .row-one-Links ul li {
@@ -731,4 +731,18 @@ nav .fa{
        font-size: 22px;
        cursor: pointer;
     }
+}
+.inner
+{
+    overflow:hidden;
+}
+
+.inner img
+{
+    transition: all 1.5s ease;
+}
+
+.inner:hover img
+{
+    transform:scale(1.5);
 }

@@ -161,6 +161,11 @@
         
     </head>
     <body>
+        <%  Cookie [] lk=request.getCookies();%>
+    <center><p><%out.print(""+lk[1].getValue());%></p></center>
+    <center><p><%out.print(""+lk[2].getValue());%></p></center>
+    <center><p><%out.print(""+lk[3].getValue());%></p></center>
+    
         <div class="movie-container">
             <label> Pick a movie</label>
             <select id="movie">
