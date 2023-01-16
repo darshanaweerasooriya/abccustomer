@@ -1,7 +1,7 @@
 <%-- 
-    Document   : seats
-    Created on : Jan 14, 2023, 12:38:43 PM
-    Author     : Darshana
+    Document   : seat
+    Created on : Jan 16, 2023, 12:21:04 PM
+    Author     : Nimesh
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -161,42 +161,49 @@
         
     </head>
     <body>
-        <%  Cookie [] lk=request.getCookies();%>
-    <center><p><%out.print(""+lk[1].getValue());%></p></center>
-    <center><p><%out.print(""+lk[2].getValue());%></p></center>
-    <center><p><%out.print(""+lk[3].getValue());%></p></center>
-    
+        
+        <form action="payment.jsp" method="post">
         <div class="movie-container">
-            <label> Pick a movie</label>
-            <select id="movie">
-                <option value="500">Select the Movie</option>
-                <option value="500">Avater</option>
-                <option value="500">Avengers</option>
-                <option value="500">Transformer</option>
-                <option value="500">King Kon</option>
-
-            </select>
+            <label><center><h2>Seat Booking</h2></center> </label><br><br>
+          
+                
+            
+            <center><table>
+                  <tr>
+                    <td>
+                        <select name="scategory" id="movie" class="form-select form-select-lg mb-3">
+                            <option>Seat Category</option>
+                            <option value="First Class">First Class</option>
+                            <option value="ODC">ODC</option>
+                            <option value="BOX">BOX</option>
+                           
+                        </select>
+                    </td> 
+                 
+                </tr>
+                </table></center>
         </div>
         <ul class="showcase">
 
             <li>
                 <div class="seat"></div>
-                <small>N/A </small>
+                <small>Available seats</small>
             </li>
 
             <li>
                 <div class="seat Selected"></div>
-                <small>Selected</small>
+                <small>Selected seats</small>
             </li>
 
             <li>
                 <div class="seat Occupied"></div>
-                <small>Occupied</small>
+                <small>Occupied seats</small>
             </li>
 
         </ul>
 
         <div class="container"> 
+            <h3>First Class</h3>
             <div class="screen"></div>
 
             <div class="row"> <div> A :</div>
@@ -292,7 +299,7 @@
                 <div class="seat">D20</div>
                 <div class="seat">D21</div>
            </div>
-
+            <h3>ODC</31>
            <div class="screen"></div>
            <div class="row"> <div> E :</div>
                 <div class="seat">E1</div>
@@ -386,7 +393,7 @@
                 <div class="seat">H20</div>
                 <div class="seat">H21</div>
            </div>
-            <div class="row "> <div> I&nbsp;&nbsp;:&nbsp;</div>
+            <div class="row "> <div> I&nbsp;&nbsp;&nbsp;:</div>
                 <div class="seat">I1</div>
                 <div class="seat">I2</div>
                 <div class="seat">I3</div>
@@ -409,6 +416,7 @@
                 <div class="seat">I20</div>
                 <div class="seat">I21</div>
            </div>
+           <h3>BOX </h3>
           
            <div class="screen"></div>
            <div class="row"> <div> J :</div>
@@ -437,11 +445,16 @@
         </div>
 
         <p class="text">
-            You have selected <span id="count">0</span>
+            You have selected <span id="count" >0</span>
             Seats for a price of LKR.<span id="total">00.00</span>
         </p>
 
-        <input  type="submit" value="continue">
+        <br>
+        
+       
+        <center><input  type="submit" value="continue"></center>
         <script src="seat.js"></script>
+        </form>
+        
     </body>
 </html>

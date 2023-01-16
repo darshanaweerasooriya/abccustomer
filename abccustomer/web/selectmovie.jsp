@@ -76,11 +76,11 @@
          <hr>
          <section>
              
-          <form action="displayvalues" method="get">
+          <form action="seats.jsp" method="post">
             <center><table>
                   <tr>
                     <td>
-                        <select name="movie" id="movie" class="form-select form-select-lg mb-3">
+                        <select name="movie" id="movie" class="form-select form-select-lg mb-3" required="">
                             <option>Select a Movie</option>
                             <option value="Avatar: The Way of Water"> <%=title%></option>
                            
@@ -88,7 +88,7 @@
                     </td> 
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>
-                         <select name="date" id="date" class="form-select form-select-lg mb-3">
+                        <select name="date" id="date" class="form-select form-select-lg mb-3" required="">
                              <option>Select Date</option>
                             <option value="sun,11th December">Mon,23th January</option>
                             <option value="Mon,12th December">Tue,24th January</option>
@@ -99,7 +99,7 @@
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>
-                        <select name="time" id="time" class="form-select form-select-lg mb-3">
+                        <select name="time" id="time" class="form-select form-select-lg mb-3" required="">
                             <option>Select  Time</option>
                             <option value="10.30">10.30am</option>
                             <option value="1.30">2.30pm</option>
@@ -115,7 +115,7 @@
                   <tr class="tr1">
                 <td class="tb1"><button type="reset" class="btn btn-danger">Cancel</button></td>
                 <td class="td1"></td>
-                <td class="tb1"><button type="submit" class="btn btn-success">Next</button></td>
+                <td class="tb1"><button type="submit" class="btn btn-success">Next</button></a></td>
                  </tr>
                   </table></center>
               
