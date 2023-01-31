@@ -39,13 +39,14 @@
             {
                 background-color: #444451;
                 height: 18px;
-                width: 20px;
-                margin: 3px;
+                width: 40px;
+                margin: 5px;
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 font-size: 10px;
-                text-align: center;
-                align-items: center;
+                text-align: left;
+                align-items: left;
+                color: white
                 
             }
 
@@ -155,8 +156,14 @@
             .seat
             {
                 height: 20px;
+                width: 20px;
             }
-            
+            button
+            {
+                text-align: center;
+                height: 18px;
+                width: 18px;
+            }
         </style>
         
     </head>
@@ -207,7 +214,7 @@
             <div class="screen"></div>
 
             <div class="row"> <div> A :</div>
-                <div class="seat">A1</div>
+                <button class="seat">A1</button>
                 <div class="seat">A2</div>
                 <div class="seat">A3</div>
                 <div class="seat">A4</div>
